@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nitin Sai Patha — Resume</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Inter:wght@400;500;600;700&display=swap');
+
+  :root{
+    --ink:#1c2321;
+    --ink-soft:#4a5450;
+    --paper:#fbfaf7;
+    --line:#d8d3c8;
+    --accent:#3f5d54;
+    --accent-soft:#e7ede9;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html,body{
+    margin:0;
+    padding:0;
+    background:#ebe8e1;
+  }
+
+  body{
+    font-family:'Inter', sans-serif;
+    color:var(--ink);
+    display:flex;
+    justify-content:center;
+    padding:28px 12px;
+  }
+
+  .page{
+    width:210mm;
+    min-height:297mm;
+    max-width:850px;
+    background:var(--paper);
+    padding:15mm 16mm;
+    box-shadow:0 4px 24px rgba(0,0,0,0.12);
+  }
+
+  /* Header */
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    border-bottom:2.5px solid var(--ink);
+    padding-bottom:10px;
+    margin-bottom:16px;
+  }
+
+  h1{
+    font-family:'Newsreader', serif;
+    font-weight:700;
+    font-size:34px;
+    letter-spacing:0.2px;
+    margin:0 0 4px 0;
+    color:var(--ink);
+  }
+
+  .role-line{
+    font-size:12.5px;
+    color:var(--accent);
+    font-weight:600;
+    letter-spacing:0.4px;
+    text-transform:uppercase;
+  }
+
+  .contact{
+    text-align:right;
+    font-size:11.5px;
+    color:var(--ink-soft);
+    line-height:1.65;
+  }
+
+  .contact a{ color:var(--ink-soft); text-decoration:none; }
+
+  /* Summary */
+  .summary{
+    font-size:12.5px;
+    line-height:1.55;
+    color:var(--ink-soft);
+    margin-bottom:18px;
+    padding-bottom:16px;
+    border-bottom:1px solid var(--line);
+  }
+
+  /* Section headings */
+  h2{
+    font-family:'Inter', sans-serif;
+    font-size:11.5px;
+    font-weight:700;
+    letter-spacing:1.6px;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 10px 0;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  h2::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--line);
+  }
+
+  section{ margin-bottom:16px; }
+
+  /* Two column layout for body */
+  .layout{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0 26px;
+  }
+
+  .col-left{ grid-column:1; }
+  .col-right{ grid-column:2; }
+  .full{ grid-column:1 / span 2; }
+
+  /* Entries */
+  .entry{ margin-bottom:11px; }
+  .entry:last-child{ margin-bottom:0; }
+
+  .entry-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:8px;
+  }
+
+  .entry-title{
+    font-size:13px;
+    font-weight:600;
+    color:var(--ink);
+  }
+
+  .entry-org{
+    font-size:12px;
+    color:var(--accent);
+    font-weight:500;
+  }
+
+  .entry-date{
+    font-size:10.5px;
+    color:var(--ink-soft);
+    white-space:nowrap;
+    font-variant-numeric:tabular-nums;
+  }
+
+  .entry-loc{
+    font-size:10.5px;
+    color:var(--ink-soft);
+    font-style:italic;
+  }
+
+  ul.bullets{
+    margin:4px 0 0 0;
+    padding-left:14px;
+  }
+  ul.bullets li{
+    font-size:11.5px;
+    line-height:1.48;
+    color:var(--ink-soft);
+    margin-bottom:2px;
+  }
+
+  .skills-tag{
+    font-size:10px;
+    color:var(--ink-soft);
+    margin-top:2px;
+  }
+
+  /* Skills section */
+  .skill-row{
+    display:flex;
+    gap:8px;
+    margin-bottom:6px;
+    font-size:11.5px;
+    line-height:1.5;
+  }
+  .skill-label{
+    font-weight:600;
+    color:var(--ink);
+    min-width:78px;
+    flex-shrink:0;
+  }
+  .skill-val{ color:var(--ink-soft); }
+
+  /* Achievements */
+  ul.achieve{
+    margin:0;
+    padding-left:14px;
+  }
+  ul.achieve li{
+    font-size:11.5px;
+    line-height:1.55;
+    color:var(--ink-soft);
+    margin-bottom:3px;
+  }
+
+  /* Certifications */
+  .cert{
+    font-size:11px;
+    line-height:1.5;
+    color:var(--ink-soft);
+    margin-bottom:5px;
+  }
+  .cert b{ color:var(--ink); font-weight:600; }
+
+  @media print{
+    body{ background:var(--paper); padding:0; }
+    .page{ box-shadow:none; width:auto; min-height:auto; padding:12mm 14mm; }
+  }
+
+  @media (max-width:700px){
+    .page{ padding:8mm; }
+    header{ flex-direction:column; align-items:flex-start; gap:8px; }
+    .contact{ text-align:left; }
+    .layout{ grid-template-columns:1fr; }
+    .col-left, .col-right, .full{ grid-column:1; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div>
+      <h1>Nitin Sai Patha</h1>
+      <div class="role-line">Aspiring Software Engineer · AI &amp; Full-Stack Development</div>
+    </div>
+    <div class="contact">
+      Hyderabad, India<br>
+      nitinsaipatha@gmail.com · +91 9908092130<br>
+      linkedin.com/in/nitin-sai-patha · github.com/nitinsaipatha-cell
+    </div>
+  </header>
+
+  <div class="summary">
+    AI and full-stack developer with hands-on experience building and deploying intelligent systems and web applications through projects and internships. Seeking software engineering internship opportunities to apply skills in computer vision, machine learning, and web development.
+  </div>
+
+  <div class="layout">
+
+    <div class="col-left">
+      <section>
+        <h2>Experience</h2>
+
+        <div class="entry">
+          <div class="entry-top">
+            <span class="entry-title">Technical Head</span>
+            <span class="entry-date">Dec 2025 – Present</span>
+          </div>
+          <div class="entry-top">
+            <span class="entry-org">Woxsen Times</span>
+            <span class="entry-loc">Hyderabad, India</span>
+          </div>
+          <ul class="bullets">
+            <li>Designing, developing, and maintaining a production-grade news website for the Woxsen Newsletter with structured content flow, responsive design, and performance optimization.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-top">
+            <span class="entry-title">Technical Executive</span>
+            <span class="entry-date">Oct 2025 – Present</span>
+          </div>
+          <div class="entry-top">
+            <span class="entry-org">School of Technology Launchpad</span>
+            <span class="entry-loc">Hyderabad, India</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-top">
+            <span class="entry-title">Technical Executive</span>
+            <span class="entry-date">Mar 2025 – Aug 2025</span>
+          </div>
+          <div class="entry-top">
+            <span class="entry-org">CiviGlo Innovations Pvt Ltd</span>
+            <span class="entry-loc">Hyderabad, India</span>
+          </div>
+          <ul class="bullets">
+            <li>Developed a bus booking and tracking web application for Woxsen students to manage weekend bus reservations.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Projects</h2>
+
+        <div class="entry">
+          <div class="entry-top">
+            <span class="entry-title">Autonomous Pothole Detection Drone</span>
+            <span class="entry-date">Oct 2025 – Present</span>
+          </div>
+          <ul class="bullets">
+            <li>Designed and expanded an autonomous drone system to detect potholes using video-based computer vision; integrated deep learning models and GPS location tracking.</li>
+          </ul>
+          <div class="skills-tag">Computer Vision · Deep Learning · Python · OpenCV · Autonomous Drones · GPS Geotagging</div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-top">
+            <span class="entry-title">Pothole Detection Algorithm</span>
+            <span class="entry-date">Sep 2025 – Oct 2025</span>
+          </div>
+          <ul class="bullets">
+            <li>Developed a video-based pothole detection algorithm to identify road surface defects from video footage for road condition monitoring.</li>
+          </ul>
+          <div class="skills-tag">Python · Computer Vision · OpenCV · Machine Learning · Video Processing</div>
+        </div>
+      </section>
+    </div>
+
+    <div class="col-right">
+      <section>
+        <h2>Education</h2>
+
+        <div class="entry">
+          <div class="entry-top">
+            <span class="entry-title">B.Tech, Computer Science &amp; Engineering</span>
+            <span class="entry-date">2024 – 2028</span>
+          </div>
+          <div class="entry-org">Woxsen University</div>
+          <div class="entry-loc">Hyderabad, India</div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-top">
+            <span class="entry-title">Class XII, CBSE</span>
+            <span class="entry-date">2022 – 2024</span>
+          </div>
+          <div class="entry-org">St. Andrews High School</div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-top">
+            <span class="entry-title">Class X, ICSE</span>
+            <span class="entry-date">2021 – 2022</span>
+          </div>
+          <div class="entry-org">Johnson Grammar School</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Skills</h2>
+        <div class="skill-row"><span class="skill-label">Languages</span><span class="skill-val">Python, SQL, C/C++ (Arduino)</span></div>
+        <div class="skill-row"><span class="skill-label">Frontend</span><span class="skill-val">HTML, CSS, React</span></div>
+        <div class="skill-row"><span class="skill-label">Backend</span><span class="skill-val">MongoDB, XAMPP, CRUD Operations</span></div>
+        <div class="skill-row"><span class="skill-label">Tools</span><span class="skill-val">LaTeX, Overleaf, Git, GitHub, Matplotlib, Simulink, Tinkercad, Arduino, Drone Tech, AutoCAD, Blender</span></div>
+        <div class="skill-row"><span class="skill-label">Core</span><span class="skill-val">Leadership, Problem Solving, Team Collaboration</span></div>
+      </section>
+
+      <section>
+        <h2>Achievements</h2>
+        <ul class="achieve">
+          <li>3rd Place, National Level Project Expo — INQUEST 2026, Symbiosis Institute of Technology, Hyderabad (Project: DARMS)</li>
+          <li>1st Place, Code Relay Tournament, Woxsen 2025</li>
+          <li>1st Place, Avishkar, Woxsen 2024</li>
+          <li>6th of 60 teams, Case Crunch 2.0, Woxsen 2024</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="full">
+      <section>
+        <h2>Certifications</h2>
+        <div class="cert"><b>Robotics and Artificial Intelligence</b> — MyEquation</div>
+        <div class="cert"><b>Crash Course on Python</b> — Google</div>
+        <div class="cert"><b>Java Programming: Solving Problems with Software</b> — Coursera (Duke University)</div>
+        <div class="cert"><b>DSA: Algorithms for Searching, Sorting, and Indexing</b> — Coursera (University of Colorado, Boulder)</div>
+        <div class="cert"><b>DSA: Data Structures Using Python — An Introduction</b> — Coursera (Packt)</div>
+        <div class="cert"><b>The Arduino Platform and C Programming</b> — Coursera (University of California, Irvine)</div>
+      </section>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
